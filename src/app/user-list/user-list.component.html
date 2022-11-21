@@ -1,0 +1,27 @@
+<h2>User List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>PS No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Blood Group</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.ps}}</td>
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.bg}}</td>
+            <td>
+                <button (click)="updateUser(user.ps)" class="btn btn-info">Update</button>
+                <button (click)="deleteUser(user.ps)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+                <button (click)="viewUser(user.ps)" class="btn btn-info" style="margin-left:10px">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
